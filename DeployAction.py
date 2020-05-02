@@ -5,6 +5,8 @@ import logging
 from enum import IntEnum
 
 BUFF_SIZE = 512
+ZipFile = ""
+ZipFileDestination = ""
 
 class DeployAction(socketserver.BaseRequestHandler):
     def handle(self):
@@ -27,8 +29,13 @@ class DeployAction(socketserver.BaseRequestHandler):
             print(str(e))
 
     def _ParseAction(self, data):
-        pass
-        # actionByte = 
+        actionByte = data[2]
+        if(actionByte == Action.UnZipAction):
+            self._UnZipFile(ZipFile, ZipFileDestination)
+        elif (actionByte == Action.RestartService):
+            self.RestartHostServer()
+        else:
+            pass
 
     def _UnZipFile(self, zipFile, destination):
         try:
