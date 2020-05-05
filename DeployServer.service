@@ -4,7 +4,7 @@ After=network-online.target
 
 [Service]
 Type=simple
-ExecStart=python3 ~/Projects/
+ExecStart=/usr/bin/python3 /home/sdlfly2000/Projects/Deployment/DeployServer.py
 KillMode=process
 Restart=on-failure
 RestartSec=1min
