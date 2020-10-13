@@ -14,7 +14,7 @@ class Deployment():
         fh.setFormatter(formatter)
         self.logger.addHandler(fh)
 
-        self.MonitorPort = 4001
+        self.MonitorPort = 4002
         self.hostName = socketserver.socket.gethostname()
         self.server = self._CreateServer(self.hostName, self.MonitorPort)
     
