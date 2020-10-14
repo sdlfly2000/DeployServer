@@ -1,0 +1,10 @@
+# Git will ignore the change on file defined here
+
+# All .pyc files
+*.pyc
+
+# log file
+deployment.log
+
+# Config file
+settings.json
